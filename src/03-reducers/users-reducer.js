@@ -19,9 +19,9 @@ const addTokenReducer = (state,payload) => {
   return {...state, token: payload.token}
 }
 
-const removeTokenReducer = (state,payload) => {
+const removeTokenReducer = (state) => {
   if(state.token !== ''){
-    return [...state.token,initialState.token]
+    return {...state.token,token:initialState.token}
   }
 }
 

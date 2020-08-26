@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useHistory } from "react-router-dom";
 //hooks
 import { useDispatch } from 'react-redux';
+import { useHistory } from "react-router-dom";
 //styles
 import {StyledLogin} from './login.style';
 //services
@@ -24,7 +24,6 @@ const Login = () => {
           history.push('/main_page');
         })
       .catch(err=>console.error(err))
-      // .finally(()=> {if (token !== '') history.push('/main_page')})
   }
   return(
   <StyledLogin>
