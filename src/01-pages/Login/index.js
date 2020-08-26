@@ -21,7 +21,6 @@ const Login = () => {
       .then((token)=>
         {
           dispatch(addToken(token));
-          debugger;
           history.push('/main_page');
         })
       .catch(err=>console.error(err))
