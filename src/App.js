@@ -1,25 +1,58 @@
-import React from 'react';
-import logo from './logo.svg';
+import React,{Suspense} from 'react';
+import { createBrowserHistory } from 'history';
+import { Provider as StoreProvider } from 'react-redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+import rootReducer from './03-reducers';
+
+//styles
 import './App.css';
+//constants
+import PATHS from './04-constants/paths';
+//components
+import Header from './00-components/header/index';
+import {BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+//pages
+const Login = React.lazy(() => import('./01-pages/Login'));
+const MainPage = React.lazy(()=>import('./01-pages/Home'));
+const OutOfBounds = React.lazy(()=>import('./01-pages/OutOfBounds'));
+
+
+const COMPONENT_PATHS = [
+  {Component:Login,path:PATHS.LOGIN},
+  {Component:MainPage,path:PATHS.MAIN_PAGE},
+  {Component:OutOfBounds,path:PATHS.OUT_OF_BOUNDS},
+]
+
+const history = createBrowserHistory();
+
+const createReduxStore = () => {
+  let composeEnhancers = compose;
+  if (process.env.NODE_ENV === 'development') {
+    if (typeof window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ === 'function') {
+      composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
+    }
+  }
+  return createStore(rootReducer, undefined, composeEnhancers(applyMiddleware(thunk)));
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StoreProvider store={createReduxStore()}>
+        <BrowserRouter history={history}>
+          <Switch>
+            {COMPONENT_PATHS.map(({path,Component})=>(
+              <Route path={path} exact key={path}>
+                {Component !== Login? <Header/>:''}
+                <Suspense fallback={<div>loading...</div>}>
+                  <Component/>
+                </Suspense>
+              </Route>
+            ))}
+              <Redirect to={PATHS.OUT_OF_BOUNDS}/>
+          </Switch>
+        </BrowserRouter>
+    </StoreProvider>
   );
 }
 
