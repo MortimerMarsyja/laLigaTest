@@ -12,3 +12,13 @@ export const replaceWithParameters = (arr, key, searchFor, payload) => {
   return arr.map(item => item[key] === searchFor ? {...item, payload}: item);
 }
 
+export const buildSimpleSideEffect = (
+  service,
+  action,
+  successAction,
+) => (...args) => (dispatch) => {
+  service.apply(null, args)
+    .then(response => dispatch(action(response)))
+    .catch(error => console.error(error))
+    .finally(()=>dispatch(successAction(false)))
+};

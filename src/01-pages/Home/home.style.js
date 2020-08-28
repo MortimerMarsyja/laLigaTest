@@ -9,6 +9,14 @@ import {whiteColor} from '../../07-styles/index.style';
   display:flex;
   flex-wrap:wrap;
   line-height:3px;
+  ul{
+    display: flex;
+    flex-direction: column;
+    line-height: 30px;
+  }
+  li{
+    text-decoration:none;
+  }
   p{
     width:100%;
     text-transform:uppercase;

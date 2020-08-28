@@ -1,5 +1,4 @@
 import React,{Suspense} from 'react';
-import { createBrowserHistory } from 'history';
 import { Provider as StoreProvider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
@@ -14,17 +13,18 @@ import Header from './00-components/header/index';
 import {BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 //pages
 const Login = React.lazy(() => import('./01-pages/Login'));
-const MainPage = React.lazy(()=>import('./01-pages/Home'));
+const UserPage = React.lazy(()=>import('./01-pages/UserPage'));
+const Home = React.lazy(()=>import('./01-pages/Home'));
 const OutOfBounds = React.lazy(()=>import('./01-pages/OutOfBounds'));
-
 
 const COMPONENT_PATHS = [
   {Component:Login,path:PATHS.LOGIN},
-  {Component:MainPage,path:PATHS.MAIN_PAGE},
+  {Component:UserPage,path:PATHS.USER},
+  {Component:Home,path:PATHS.MAIN_PAGE},
   {Component:OutOfBounds,path:PATHS.OUT_OF_BOUNDS},
 ]
 
-const history = createBrowserHistory();
+// const history = createBrowserHistory();
 
 const createReduxStore = () => {
   let composeEnhancers = compose;
@@ -39,7 +39,7 @@ const createReduxStore = () => {
 function App() {
   return (
     <StoreProvider store={createReduxStore()}>
-        <BrowserRouter history={history}>
+        <BrowserRouter>
           <Switch>
             {COMPONENT_PATHS.map(({path,Component})=>(
               <Route path={path} exact key={path}>

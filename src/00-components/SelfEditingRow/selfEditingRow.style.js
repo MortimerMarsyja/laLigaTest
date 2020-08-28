@@ -21,6 +21,7 @@ export const StyledRow = styled.div`
     cursor: pointer !important;
   }
   p{
+    margin-right:12px;
     text-transform:uppercase;
     font-weight:600;
     margin-left:30px;

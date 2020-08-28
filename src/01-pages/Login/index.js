@@ -8,7 +8,8 @@ import {StyledLogin} from './login.style';
 import {LoginIntoAppCall} from '../../06-services/index';
 //actions
 import {addToken} from '../../02-actions/index';
-
+//constants
+import PATHS from '../../04-constants/paths'
 
 const Login = () => {
   let history = useHistory();
@@ -21,7 +22,7 @@ const Login = () => {
       .then((token)=>
         {
           dispatch(addToken(token));
-          history.push('/main_page');
+          history.push(PATHS.MAIN_PAGE);
         })
       .catch(err=>console.error(err))
   }

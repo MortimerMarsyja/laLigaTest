@@ -1,41 +1,49 @@
-import {mergeArr,filterArrDuplicates,findIn,replaceWithParameters} from '../05-utils'
-
 //User Reducers
-const addUserReducer = (state,payload) => {
-  const value = findIn(state.users, 'key', payload.id)
-  if (value){
-    return replaceWithParameters(state.users,'key',payload.id,payload)
-  }
-  return [...state.users,payload]
+const fetchUsersReducer = (state,payload) => {
+  return{...state,users: payload} 
 }
 
-const fetchUsersReducer = (state,payload) => {
- return{users: filterArrDuplicates(mergeArr(payload,state.users))} 
+const storeUserByIdReducer = (state,payload) => {
+  return{...state,currentUser: payload}
 }
+
+const setUsersCurrentPageReducer = (state,payload) => {
+  return {...state,usersCurrentPage:payload}
+}
+
+//Generic Reducer
+const setToLoadReducer = (state,payload) => {
+  return {...state,loading:payload}
+}
+
 
 //Token Reducers
 const addTokenReducer = (state,payload) => {
-  console.log('REDUCER ADD TOKEN', payload);
   return {...state, token: payload.token}
 }
 
 const removeTokenReducer = (state) => {
-  if(state.token !== ''){
-    return {...state.token,token:initialState.token}
-  }
+    return {...state.token,token: initialState.token}
 }
 
+
+
 const reducers = {
-  'ADD_USERS': addUserReducer,
-  'FETCH_USERS': fetchUsersReducer,
+  'ADD_USERS': fetchUsersReducer,
+  'STORE_USER_BY_ID': storeUserByIdReducer,
+  'SET_USERS_CURRENT_PAGE': setUsersCurrentPageReducer,
   'ADD_TOKEN': addTokenReducer,
   'REMOVE_TOKEN': removeTokenReducer,
+  'SET_TO_LOAD': setToLoadReducer,
   'default': state => state,
 }
 
 const initialState = {
-  users: [],
-  token:''
+  users: {},
+  currentUser: {},
+  usersCurrentPage: 0,
+  token: '',
+  loading: true,
 }
 
 const baseReducer = (state = initialState, action) => {

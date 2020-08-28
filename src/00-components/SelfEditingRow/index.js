@@ -4,16 +4,19 @@ import SelfEditingText from '../SelfEditingTextComponent';
 //styles
 import {StyledRow} from './selfEditingRow.style';
 
-const SelfEditingRow = ({value}) => {
+const SelfEditingRow = ({label, value , isEditedFunction,idToUpdate}) => {
   const [isEditing,setEdititng] = useState(false);
   const [textValue,setTextValue] = useState(value)
 
   const handlerChange = useCallback(value => setTextValue(value), []);
-  const handlerEndEdit = useCallback(() => setEdititng(false), []);
+  const handlerEndEdit = useCallback(() => {
+    setEdititng(false) 
+    isEditedFunction(idToUpdate,{[label]:textValue})}
+  , [idToUpdate, isEditedFunction, label, textValue]);
 
-  console.log(isEditing);
   return(
     <StyledRow>
+      <p>{label}</p>
       <SelfEditingText 
         value={textValue} 
         isEdited={isEditing} 
@@ -21,7 +24,6 @@ const SelfEditingRow = ({value}) => {
         onSubmit={handlerEndEdit}
       />
       <button onClick={()=>setEdititng(!isEditing)}>edit</button>
-      <button>erase</button>
     </StyledRow>
   )
 }
