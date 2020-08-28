@@ -23,7 +23,7 @@ const SelfEditingRow = ({label, value , isEditedFunction,idToUpdate}) => {
         onChange={handlerChange}
         onSubmit={handlerEndEdit}
       />
-      <button onClick={()=>setEdititng(!isEditing)}>edit</button>
+      <button onClick={()=>setEdititng(!isEditing)}>{isEditing?'x':'edit'}</button>
     </StyledRow>
   )
 }

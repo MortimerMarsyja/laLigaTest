@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import {whiteColor} from '../../07-styles/index.style';
+import {whiteColor,blueColor,pinkColor} from '../../07-styles/index.style';
+
 
  export const StyledLogin = styled.div`
   background: ${whiteColor};
@@ -27,6 +28,24 @@ import {whiteColor} from '../../07-styles/index.style';
     flex-direction:column;
   }
   input{
-    margin-bottom:30px;
+    margin-bottom:12px;
+  }
+  .inputButton{
+    border-radius:30px;
+    height:24px;
+    background-color:${blueColor};
+    color: ${whiteColor};
+    padding:6px;
+    border:none;
+    line-height:13px;
+  }
+  .inputButton:hover{
+    cursor:pointer;
+    background-color:${pinkColor};
+    color:#000;
+  }
+  label{
+    line-height:24px;
+    heigh:30px;
   }
 `

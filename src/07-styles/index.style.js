@@ -9,5 +9,5 @@ export const greyColors = {
 }
 
 export const whiteColor = '#ffffff';
-
-
+export const blueColor = '#b8afff';
+export const pinkColor = '#ffafcd';

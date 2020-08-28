@@ -15,21 +15,24 @@ import PATHS from '../../04-constants/paths/index';
 import {updateUserByIdCall} from '../../06-services/index';
 import {eraseUserByIdCall} from '../../06-services/index';
 
-const eraseUserCurrentUserFunction=(id,history)=>{
+const eraseUserCurrentUserFunction = (id,history) => {
   history.push(PATHS.MAIN_PAGE)
   eraseUserByIdCall(id);
 }
 
 const renderUserContent = (selectedUser,history) => {
-  console.log(selectedUser.data)
  return(
   <StyledUser>
-    <img className='avatar' src={selectedUser.data.avatar} alt='user_avatar'/>
-    <SelfEditingRow label='id' value={selectedUser.data.id} isEditedFunction={updateUserByIdCall} idToUpdate={selectedUser.data.id}/>
-    <SelfEditingRow label='email' value={selectedUser.data.email} isEditedFunction={updateUserByIdCall} idToUpdate={selectedUser.data.id}/>
-    <SelfEditingRow label='first_name' value={selectedUser.data.first_name} isEditedFunction={updateUserByIdCall} idToUpdate={selectedUser.data.id}/>
-    <SelfEditingRow label='last_name' value={selectedUser.data.last_name} isEditedFunction={updateUserByIdCall} idToUpdate={selectedUser.data.id}/>
-    <button onClick={()=>{eraseUserCurrentUserFunction(selectedUser.data.id,history)}}>Erase</button>
+    <div className='leftUserFeatures'>
+      <img className='avatar' src={selectedUser.data.avatar} alt='user_avatar'/>
+      <SelfEditingRow label='id' value={selectedUser.data.id} isEditedFunction={updateUserByIdCall} idToUpdate={selectedUser.data.id}/>
+      <SelfEditingRow label='email' value={selectedUser.data.email} isEditedFunction={updateUserByIdCall} idToUpdate={selectedUser.data.id}/>
+      <SelfEditingRow label='first_name' value={selectedUser.data.first_name} isEditedFunction={updateUserByIdCall} idToUpdate={selectedUser.data.id}/>
+      <SelfEditingRow label='last_name' value={selectedUser.data.last_name} isEditedFunction={updateUserByIdCall} idToUpdate={selectedUser.data.id}/>
+    </div>
+    <div className='rightUserFeatures'>
+      <button onClick={()=>{eraseUserCurrentUserFunction(selectedUser.data.id,history)}}>Erase</button>
+    </div>
   </StyledUser>
  ) 
 }

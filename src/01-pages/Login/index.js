@@ -29,15 +29,11 @@ const Login = () => {
   return(
   <StyledLogin>
     <form onSubmit={handleSubmit}>
-      <label>
-        Username:
-        <input placeholder={username} onChange={e => setUsername(e.target.value)}/>
-      </label>
-      <label>
-        Password:
-        <input type="password" placeholder={password} onChange={e => setPassword(e.target.value)}/>
-      </label>
-      <input type='submit' value='Login'/>
+          <label>Username:</label>
+          <input placeholder={username} onChange={e => setUsername(e.target.value)}/>
+          <label>Password:</label>
+          <input type="password" placeholder={password} onChange={e => setPassword(e.target.value)}/>
+      <input className='inputButton' type='submit' value='Login'/>
     </form>
   </StyledLogin>
   )
