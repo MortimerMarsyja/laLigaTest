@@ -7,6 +7,7 @@ While the application could be improved and will be improved in future versions,
 this is meeting the requirements.
 
 ##### Observation:  in the briefing of the test the ReqRes library examples are outdated, so I had to educate myself on the API
+##### Pleade do notice that the application will keep recieving updates, so please download the version inputed INSIDE THE DUE DATE
 
 # Start
 #### Clone the repo from here:
