@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {whiteColor,blueColor,pinkColor} from '../../07-styles/index.style';
+import {whiteColor,blueColor,pinkColor,greyColors} from '../../07-styles/index.style';
 
 
  export const StyledLogin = styled.div`
@@ -29,15 +29,26 @@ import {whiteColor,blueColor,pinkColor} from '../../07-styles/index.style';
   }
   input{
     margin-bottom:12px;
+    background:${greyColors[100]};
+    padding:6px;
+    border-radius: 3px;
+    border:none;
+    &:focus{
+      background-color:${pinkColor};
+      border-color:red;
+    }
   }
   .inputButton{
     border-radius:30px;
-    height:24px;
+    height:32px;
     background-color:${blueColor};
     color: ${whiteColor};
     padding:6px;
     border:none;
+    font-weight: 800;
     line-height:13px;
+    margin-top:15px;
+    transition: 0.48s;
   }
   .inputButton:hover{
     cursor:pointer;
