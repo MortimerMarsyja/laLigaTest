@@ -10,8 +10,8 @@ const Header = () => {
   return(
     <StyledHeader>
       <p>La liga</p>      
-      <a href="/">
-        <IconComponent color='red' fill='red' size='24px' icon={iconList.logo} strokeWidth='1.3'/>
+      <a className='webIcon' href="/">
+        <IconComponent color='#000' fill='#000' size='24px' icon={iconList.logo} strokeWidth='1.3'/>
       </a>
       <p>&nbsp;</p>
     </StyledHeader>
