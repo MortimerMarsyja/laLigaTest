@@ -3,7 +3,7 @@ import {whiteColor} from '../../07-styles/index.style';
 
 export const StyledPaginationController = styled.div`
 height:30px;
-box-shadow: 0 1px 6px 0 rgba(32,32,36,0.30);
+box-shadow: 1px 2px 6px 0 rgb(173 170 170 / 30%);
 border-radius: 30px;
 background: ${whiteColor};
 .pagesWrapper{
