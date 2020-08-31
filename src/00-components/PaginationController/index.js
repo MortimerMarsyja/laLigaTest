@@ -19,10 +19,13 @@ const renderAfter = (currentPage,numberOfTotalPages,setPage) => {
 }
 
 const handleChange = (evt,setPage,totalPages,currentPage) => {
+  if(totalPages < evt.target.value){
+    setPage(totalPages);
+    evt.target.value = totalPages;
+  }
   if(totalPages >= evt.target.value && evt.target.value > 0){
     setPage(Number(evt.target.value))
   }
-  return currentPage;
 }
 
 const renderTools = (currentPage, totalPages, setPage) => {
