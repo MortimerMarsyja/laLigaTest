@@ -13,6 +13,22 @@ background: ${whiteColor};
   padding: 4px 24px;
   width: 156px;
 }
+.iconButton{
+  border: none;
+  border-radius: 3px;
+  line-heighF: 24px;
+  height: 22px;
+  width: 32px;
+  transition: 0.48s;
+  background:none;
+  color:blue;
+  fill:blue;
+}
+.iconButton:hover{
+  cursor:pointer;
+  color:red;
+  fill:red;
+}
 p{
   text-transform:uppercase;
   font-weight:600;
