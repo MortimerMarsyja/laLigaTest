@@ -31,7 +31,7 @@ export async function eraseUserByIdCall(userId){
 
 export async function fetchUsersCall(page){
   return await fetch(
-    `${USERS}?${page}`,{method:'GET'}
+    `${USERS}?page=${page}`,{method:'GET'}
   )
   .then((response)=>response.json())
   .catch(err=>console.error(err))

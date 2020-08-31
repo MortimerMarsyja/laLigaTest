@@ -41,7 +41,7 @@ const Home = (params) =>{
     if(token === ''){history.push(PATHS.LOGIN)}
     dispatch(fetchUsersList(currentPage))
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [token,isLoading]);
+  }, [token,isLoading,currentPage]);
 
   return(
     <StyledHome>
@@ -51,7 +51,7 @@ const Home = (params) =>{
           {renderHomeContent(users,dispatch)}
         </ul>
         <div>
-        <PaginationController data={users} currentPage={currentPage}/>
+        <PaginationController loaderFunction={setLoadingAction} data={users} currentPage={currentPage}/>
         </div>
       </div>
       }

@@ -41,7 +41,7 @@ const reducers = {
 const initialState = {
   users: {},
   currentUser: {},
-  usersCurrentPage: 0,
+  usersCurrentPage: 1,
   token: '',
   loading: true,
 }
