@@ -7,18 +7,25 @@ While the application could be improved and will be improved in future versions,
 this is meeting the requirements.
 
 ##### Observation:  in the briefing of the test the ReqRes library examples are outdated, so I had to educate myself on the API
-##### Pleade do notice that the application will keep recieving updates, so please download the version inputed INSIDE THE DUE DATE
+##### A tag has been added to identify the commit that needs to be downloaded that was DUE DEADLINE , 
+
 
 # Start
 #### Clone the repo from here:
 
-> **clone:**  git@github.com:MortimerMarsyja/laLigaTest.git
+```
+git@github.com:MortimerMarsyja/laLigaTest.git
+```
 
 #### Open a terminal in the folder you downloaded the project
-> **Install:**  npm install
+```
+npm install
+```
 
 #### Start the project
-> **start:**  npm start
+```
+npm start
+```
 
 ## To do
 
