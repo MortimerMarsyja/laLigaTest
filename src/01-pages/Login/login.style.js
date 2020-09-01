@@ -16,10 +16,11 @@ import {whiteColor,blueColor,pinkColor,greyColors} from '../../07-styles/index.s
   line-height:3px;
   .leftBlock{
     display:flex;
-    height:30px;
+    height: 40px;
+    line-height: 8px;
     p{
       margin-left:12px;
-      margin-right:22px;
+      margin-right:26px;
     }
   }
   p{

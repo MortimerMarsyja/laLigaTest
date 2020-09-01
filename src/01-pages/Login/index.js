@@ -33,7 +33,7 @@ const Login = () => {
   return(
   <StyledLogin>
     <div className='leftBlock'>
-      <IconComponent color='#000' fill='#000' size='32px' icon={ICON_LIST.logo} strokeWidth='1'/>
+      <IconComponent color='#000' fill='#000' size='40px' icon={ICON_LIST.logo} strokeWidth='1'/>
       <p>La Liga test</p>
     </div>
     <div className='rightBlock'>
