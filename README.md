@@ -7,7 +7,9 @@ While the application could be improved and will be improved in future versions,
 this is meeting the requirements.
 
 ##### Observation:  in the briefing of the test the ReqRes library examples are outdated, so I had to educate myself on the API
-##### A tag has been added to identify the commit that needs to be downloaded that was DUE DEADLINE , 
+---
+
+**_NOTE:_**  A tag has been added to identify the commit that needs to be downloaded that was DUE DEADLINE.
 
 
 # Start
@@ -29,8 +31,8 @@ npm start
 
 ## To do
 
-- On following iterations, some layering will be added, with more time , the page would have looked  nicer
-- Pagination will also be implemented in the next version
+- Add smaller improvements in the UX of the website, for instance a return button from the user profile, and a home button in the logo
+
 - Memoized version of the selectors to make the loads lighter will be implemented
 
 ## Current State
@@ -38,6 +40,7 @@ npm start
 - The application, can log in with credentials provided from the API Req Res
 - A user list will be shown
 - Users can be accessed, edited their data and deleted
+- Fully working paginattion was recently included [Out of deadline]
 
 ## Improvements
 - A back button should be implemented in the User page
