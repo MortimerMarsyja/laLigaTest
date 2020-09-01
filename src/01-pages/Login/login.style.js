@@ -14,6 +14,14 @@ import {whiteColor,blueColor,pinkColor,greyColors} from '../../07-styles/index.s
   display:flex;
   flex-wrap:wrap;
   line-height:3px;
+  .leftBlock{
+    display:flex;
+    height:30px;
+    p{
+      margin-left:12px;
+      margin-right:22px;
+    }
+  }
   p{
     width:100%;
     text-transform:uppercase;
