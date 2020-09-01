@@ -5,13 +5,13 @@ import { useDispatch } from 'react-redux';
 import {setCurrentPageAction} from '../../02-actions/index';
 import { StyledPaginationController } from './PaginationControl.style';
 import IconComponent from '../IconComponent/index';
-import iconList from '../../04-constants/iconsList';
+import ICON_LIST from '../../04-constants/iconsList';
 
 const renderBefore = (currentPage,numberOfTotalPages, setPage) => {
   if(currentPage >= numberOfTotalPages){
     return (
     <button className='iconButton' onClick={() => setPage(currentPage-1)}>
-      <IconComponent color='inherit' fill='inherit' size='20px' icon={iconList.leftArrow} strokeWidth='1.3'/>
+      <IconComponent color='inherit' fill='inherit' size='20px' icon={ICON_LIST.leftArrow} strokeWidth='1.3'/>
     </button>)
   }
 }
@@ -20,7 +20,7 @@ const renderAfter = (currentPage,numberOfTotalPages,setPage) => {
   if(currentPage < numberOfTotalPages){
     return (
     <button className='iconButton' onClick={() => setPage(currentPage+1)}>
-      <IconComponent color='inherit' fill='inherit' size='20px' icon={iconList.rightArrow} strokeWidth='1.3'/>
+      <IconComponent color='inherit' fill='inherit' size='20px' icon={ICON_LIST.rightArrow} strokeWidth='1.3'/>
     </button>)
   }
 }
