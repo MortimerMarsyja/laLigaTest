@@ -1,6 +1,6 @@
 import React from 'react';
 
-const iconList = {
+const ICON_LIST = {
   'leftArrow' :(<React.Fragment><path d="M14.3 7.2V4.5L5.5 12l8.8 7.3 1.3-1.5-7-5.8z" /></React.Fragment>),
   'rightArrow' :(<React.Fragment><path d="M8.2 16.7v2.6l8.8-7.5-8.8-7.3L7 6.1l6.9 5.7z" /></React.Fragment>),
   'logo' :
@@ -10,4 +10,4 @@ const iconList = {
   </React.Fragment>),
 }
 
-export default iconList;
+export default ICON_LIST;
