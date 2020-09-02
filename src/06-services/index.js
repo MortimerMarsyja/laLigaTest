@@ -25,7 +25,7 @@ export async function eraseUserByIdCall(userId){
   return await fetch(
     `${USERS}/${userId}`,{method:'DELETE'}
   )
-  .then((res)=>res.json())
+  .then((res)=>res)
   .catch(err=>console.error(err))
 }
 

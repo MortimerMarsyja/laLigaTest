@@ -23,10 +23,12 @@ const addTokenReducer = (state,payload) => {
 }
 
 const removeTokenReducer = (state) => {
-    return {...state.token,token: initialState.token}
+    return {...state,token: initialState.token}
 }
 
-
+const logoutReducer = () => {
+  return initialState
+}
 
 const reducers = {
   'ADD_USERS': fetchUsersReducer,
@@ -35,6 +37,7 @@ const reducers = {
   'ADD_TOKEN': addTokenReducer,
   'REMOVE_TOKEN': removeTokenReducer,
   'SET_TO_LOAD': setToLoadReducer,
+  'LOGOUT': logoutReducer,
   'default': state => state,
 }
 

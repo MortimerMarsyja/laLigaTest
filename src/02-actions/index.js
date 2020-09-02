@@ -34,3 +34,7 @@ export const setLoadingAction = payload => ({
   type:'SET_TO_LOAD',
   payload
 })
+
+export const logoutAction = () => ({
+  type:'LOGOUT',
+})
