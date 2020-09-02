@@ -17,12 +17,12 @@ import ICON_LIST from '../../04-constants/iconsList';
 
 const Login = () => {
   let history = useHistory();
-  const [username,setUsername] = useState('Username');
+  const [email,setUsername] = useState('Username');
   const [password,setPassword] = useState('Password');
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
-    LoginIntoAppCall(username,password)
+    LoginIntoAppCall(email,password)
       .then((token)=>
         {
           dispatch(addToken(token));
@@ -39,7 +39,7 @@ const Login = () => {
     <div className='rightBlock'>
       <form onSubmit={handleSubmit}>
             <label>Username:</label>
-            <input placeholder={username} onChange={e => setUsername(e.target.value)}/>
+            <input placeholder={email} type='text' name='email' onChange={e => setUsername(e.target.value)}/>
             <label>Password:</label>
             <input type="password" placeholder={password} onChange={e => setPassword(e.target.value)}/>
         <input className='inputButton' type='submit' value='Login'/>

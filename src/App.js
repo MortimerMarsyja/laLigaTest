@@ -8,6 +8,7 @@ import rootReducer from './03-reducers';
 import './App.css';
 //constants
 import PATHS from './04-constants/paths';
+import ICON_LIST from './04-constants/iconsList/index';
 //components
 import Header from './00-components/header/index';
 import {BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
@@ -16,6 +17,7 @@ const Login = React.lazy(() => import('./01-pages/Login'));
 const UserPage = React.lazy(()=>import('./01-pages/UserPage'));
 const Home = React.lazy(()=>import('./01-pages/Home'));
 const OutOfBounds = React.lazy(()=>import('./01-pages/OutOfBounds'));
+
 
 const COMPONENT_PATHS = [
   {Component:Login,path:PATHS.LOGIN},
@@ -43,7 +45,7 @@ function App() {
           <Switch>
             {COMPONENT_PATHS.map(({path,Component})=>(
               <Route path={path} exact key={path}>
-                {Component !== Login? <Header/>:''}
+                {Component !== Login? <Header title='La Liga' icon={ICON_LIST.logo}/>:''}
                 <Suspense fallback={<div>loading...</div>}>
                   <Component/>
                 </Suspense>
