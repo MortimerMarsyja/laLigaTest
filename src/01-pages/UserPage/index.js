@@ -1,6 +1,7 @@
 import React,{useEffect} from 'react';
 //components
 import SelfEditingRow from '../../00-components/SelfEditingRow/index';
+import IconComponent from '../../00-components/IconComponent/index';
 //styles
 import {StyledUser} from './userPage.style';
 //hooks
@@ -11,6 +12,7 @@ import { useSelector,useDispatch } from 'react-redux';
 import {fetchUserByIdSideEffect} from '../../09-side-effects/index';
 //constants
 import PATHS from '../../04-constants/paths/index';
+import ICON_LIST from '../../04-constants/iconsList/index';
 //services
 import {updateUserByIdCall} from '../../06-services/index';
 import {eraseUserByIdCall} from '../../06-services/index';
@@ -19,6 +21,7 @@ const eraseUserCurrentUserFunction = (id,history) => {
   history.push(PATHS.MAIN_PAGE)
   eraseUserByIdCall(id);
 }
+
 
 const renderUserContent = (selectedUser,history) => {
  return(
@@ -31,7 +34,9 @@ const renderUserContent = (selectedUser,history) => {
       <SelfEditingRow label='last_name' value={selectedUser.data.last_name} isEditedFunction={updateUserByIdCall} idToUpdate={selectedUser.data.id}/>
     </div>
     <div className='rightUserFeatures'>
-      <button onClick={()=>{eraseUserCurrentUserFunction(selectedUser.data.id,history)}}>Erase</button>
+      <button className='circleButton' onClick={()=>{eraseUserCurrentUserFunction(selectedUser.data.id,history)}}>
+        <IconComponent color='#000' fill='inherit' size='24px' icon={ICON_LIST.trash} strokeWidth='1.3'/>
+      </button>
     </div>
   </StyledUser>
  ) 
