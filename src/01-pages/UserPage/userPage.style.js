@@ -18,6 +18,21 @@ export const StyledUser = styled.div`
     margin-top:15px;
     text-align:rignt;
   }
+  .circleButton{
+    border-radius: 50%;
+    height: 34px;
+    width: 34px;
+    border: 1px solid #ccc;
+    fill:blue;
+    margin-right:10px;
+    svg{
+      margin:3px -2px;
+    }
+  &:hover{
+    cursor:pointer;
+    fill:red;
+  }
+  }
   .avatar{
     margin-left:60px;
     margin-top:12px;

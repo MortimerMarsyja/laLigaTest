@@ -1,7 +1,7 @@
-import * as React from "react"
+import React from "react"
 
 
-const IconComponent = ({color,fill,size,icon,strokeWidth}) => {
+const IconComponent = ({color,fill,size,icon,strokeWidth,onClick}) => {
   return (
     <svg viewBox="0 0 24 24"
     width={size}
@@ -9,6 +9,7 @@ const IconComponent = ({color,fill,size,icon,strokeWidth}) => {
     color={color}
     fill={fill}
     strokeWidth={strokeWidth}
+    onClick={onClick}
     >
       {icon}
     </svg>
