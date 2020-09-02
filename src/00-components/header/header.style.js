@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {whiteColor} from '../../07-styles/index.style'
+import {whiteColor,pinkColor} from '../../07-styles/index.style'
 
 export const StyledHeader = styled.header`
   background: ${whiteColor};
@@ -9,6 +9,7 @@ export const StyledHeader = styled.header`
   display:flex;
   flex-wrap:nowrap;
   line-height:3px;
+  justify-content:space-between;
   .webIcon{
     margin: 4px 8px;
   }
@@ -17,5 +18,18 @@ export const StyledHeader = styled.header`
     font-weight:600;
     margin-left:30px;
     justify-content:flex-start;
+  }
+  .header-wrapper-left{
+    display:flex;
+  }
+  .buttonLink{
+    color:blue;
+    text-decoration:underline;
+    line-height:30px;
+    margin-right:30px;
+    &:hover{
+      cursor:pointer;
+      color:${pinkColor};
+    }
   }
 `
