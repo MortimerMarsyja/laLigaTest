@@ -3,17 +3,24 @@ import React from 'react';
 import IconComponent from '../IconComponent/index';
 //styles
 import {StyledHeader} from './header.style';
-//constants
-import ICON_LIST from '../../04-constants/iconsList/index';
+//hooks
+import { useDispatch } from 'react-redux';
+//actions
+import {logoutAction} from '../../02-actions/index';
 
-const Header = () => {
+const Header = ({icon,title}) => {
+  const dispatch = useDispatch();
   return(
     <StyledHeader>
-      <p>La liga</p>      
-      <a className='webIcon' href="/">
-        <IconComponent color='#000' fill='#000' size='24px' icon={ICON_LIST.logo} strokeWidth='1.3'/>
-      </a>
-      <p>&nbsp;</p>
+      <div className='header-wrapper-left'>
+        <p>{title}</p>      
+        <div className='webIcon'>
+          <IconComponent color='#000' fill='#000' size='24px' icon={icon} strokeWidth='1.3'/>
+        </div>
+      </div>
+      <div className='header-wrapper-right'>
+         <div className='buttonLink' onClick={()=>dispatch(logoutAction())}>Logout</div>
+      </div>
     </StyledHeader>
   )
 }
