@@ -11,10 +11,12 @@ most of the state of the application is dealt with almost solely by Redux.
 While the application could be improved and will be improved in future versions, 
 this is meeting the requirements.
 
-##### Observation:  in the briefing of the test the ReqRes library examples are outdated, so I had to educate myself on the API
+##### Observation:  in the briefing of the test the ReqRes library examples are outdated, so I had to educate myself on the [API](https://reqres.in/)
 ---
 
-**_NOTE:_**  A tag has been added to identify the commit that needs to be downloaded that was DUE DEADLINE.
+**_NOTE:_**  A tag has been added to identify the commit that needs to be downloaded that was **DUE DEADLINE**.
+
+**_NOTE:_** A Valid login user can be found in the same API I linked one article up under **LOGIN-SUCCESSFUL**
 
 
 # Start
