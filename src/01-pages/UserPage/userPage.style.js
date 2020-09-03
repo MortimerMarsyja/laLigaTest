@@ -1,9 +1,9 @@
-import styled from 'styled-components'
- 
-import {greyColors} from '../../07-styles/index.style'
+import styled from "styled-components";
+
+import { greyColors } from "../../07-styles/index.style";
 
 export const StyledUser = styled.div`
-  width: 800px;
+  width: 564px;
   background-color: #none;
   display:flex;
   justify-content:space-between;
@@ -24,7 +24,9 @@ export const StyledUser = styled.div`
     width: 34px;
     border: 1px solid #ccc;
     fill:blue;
+    margin-top:-10px;
     margin-right:10px;
+    transition: 0.48s;
     svg{
       margin:3px -2px;
     }
@@ -43,11 +45,9 @@ export const StyledUser = styled.div`
       line-height:30px;
     }
   }
-`
+`;
 
 export const ItemWrapper = styled.div`
   width: 812px;
   margin: 12px auto;
-`
-
-
+`;
