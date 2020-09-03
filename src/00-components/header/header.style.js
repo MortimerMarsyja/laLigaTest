@@ -27,6 +27,7 @@ export const StyledHeader = styled.header`
     text-decoration:underline;
     line-height:30px;
     margin-right:30px;
+    transition: 0.48s;
     &:hover{
       cursor:pointer;
       color:${pinkColor};
