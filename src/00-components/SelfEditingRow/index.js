@@ -4,6 +4,7 @@ import SelfEditingText from '../SelfEditingTextComponent';
 //styles
 import {StyledRow} from './selfEditingRow.style';
 
+
 const SelfEditingRow = ({label, value , isEditedFunction,idToUpdate}) => {
   const [isEditing,setEdititng] = useState(false);
   const [textValue,setTextValue] = useState(value)
@@ -23,7 +24,7 @@ const SelfEditingRow = ({label, value , isEditedFunction,idToUpdate}) => {
         onChange={handlerChange}
         onSubmit={handlerEndEdit}
       />
-      <button onClick={()=>setEdititng(!isEditing)}>{isEditing?'x':'edit'}</button>
+      <button onClick={()=>setEdititng(!isEditing)}>{isEditing?(<React.Fragment>&times;</React.Fragment>):'edit'}</button>
     </StyledRow>
   )
 }

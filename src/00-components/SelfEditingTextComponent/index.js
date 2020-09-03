@@ -12,7 +12,7 @@ const SelfEditingText = ({isEdited,value,onChange, onSubmit}) => {
     <StyledText>
       {isEdited?
       <form onSubmit={handlerSubmit}>
-        <input placeholder={value} onChange={e => onChange(e.target.value)}/>
+        <input placeholder={'press intro to edit'} onChange={e => onChange(e.target.value)}/>
       </form>
       :value}
     </StyledText>
