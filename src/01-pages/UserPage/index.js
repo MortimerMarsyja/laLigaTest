@@ -16,14 +16,20 @@ import ICON_LIST from '../../04-constants/iconsList/index';
 //services
 import {updateUserByIdCall} from '../../06-services/index';
 import {eraseUserByIdCall} from '../../06-services/index';
+//actions
+import {setLoadingAction} from '../../02-actions/index';
 
 const eraseUserCurrentUserFunction = (id,history) => {
   history.push(PATHS.MAIN_PAGE)
   eraseUserByIdCall(id);
 }
 
+const returnToHome = (dispatch,history) => {
+  dispatch(setLoadingAction(true));
+  history.push(PATHS.MAIN_PAGE);
+}
 
-const renderUserContent = (selectedUser,history) => {
+const renderUserContent = (selectedUser,history,dispatch) => {
  return(
   <StyledUser>
     <div className='leftUserFeatures'>
@@ -36,6 +42,9 @@ const renderUserContent = (selectedUser,history) => {
     <div className='rightUserFeatures'>
       <button className='circleButton' onClick={()=>{eraseUserCurrentUserFunction(selectedUser.data.id,history)}}>
         <IconComponent color='#000' fill='inherit' size='24px' icon={ICON_LIST.trash} strokeWidth='1.3'/>
+      </button>
+      <button className='circleButton' onClick={()=>{returnToHome(dispatch,history)}}>
+        <IconComponent color='#000' fill='inherit' size='24px' icon={ICON_LIST.returnArrow} strokeWidth='1.3'/>
       </button>
     </div>
   </StyledUser>
@@ -62,7 +71,7 @@ const UserPage = () => {
 
   return(
     <div>
-       {isLoading?<p>Loading...</p>:renderUserContent(selectedUser,history)}
+       {isLoading?<p>Loading...</p>:renderUserContent(selectedUser,history,dispatch)}
     </div>
   )
 }
