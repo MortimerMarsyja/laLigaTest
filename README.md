@@ -1,5 +1,10 @@
 # La Liga test
 
+## Disclosure
+
+> I updated this repo to be up to my current standards I am aware that the latest changes would not be inside of the deadline.
+---
+
 This project is a small web application that features a React and Redux application written from scratch
 most of the state of the application is dealt with almost solely by Redux.
 
@@ -31,8 +36,6 @@ npm start
 
 ## To do
 
-- Add smaller improvements in the UX of the website, for instance a return button from the user profile, and a home button in the logo
-
 - Memoized version of the selectors to make the loads lighter will be implemented
 
 ## Current State
@@ -41,9 +44,9 @@ npm start
 - A user list will be shown
 - Users can be accessed, edited their data and deleted
 - Fully working paginattion was recently included [Out of deadline]
+- Fully working usability cycle
 
 ## Improvements
-- A back button should be implemented in the User page
-- A log out button should be implemented to get out of the page
+- The only improvement the app could currently have is improving the message to update the inputs 
 
-This two features would greatly improve the UX of the website
+This two feature would slightly improve the usability of the website
