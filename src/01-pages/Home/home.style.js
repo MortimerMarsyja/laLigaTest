@@ -10,6 +10,9 @@ import {whiteColor} from '../../07-styles/index.style';
   flex-wrap:wrap;
   justify-content:center;
   line-height:3px;
+  .user-icon{
+    margin-right:9px;
+  }
   ul{
     display:flex;
     flex-direction:column;
@@ -19,6 +22,7 @@ import {whiteColor} from '../../07-styles/index.style';
     margin-bottom:30px;
   }
   li{
+    display:flex;
     height:30px;
     line-height:30px;
   }

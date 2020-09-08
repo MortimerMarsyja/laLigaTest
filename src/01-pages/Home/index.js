@@ -17,9 +17,16 @@ const getUsersFromStore  = (store) => store.users || {};
 const getCurrentPageFromStore = (store) => store.usersCurrentPage;
 const getLoadingStateFromStore = (store) => store.loading;
 
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+const userIconsArr = ['🙈','🙉','🙊'];
+
 const renderHomeContent = (users,dispatch) => {
   return users.data.map(user=>
     <li key={user.id}>
+      <div className='user-icon'>{userIconsArr[getRandomInt(3)]}</div>
       <Link 
         onClick={()=>dispatch(setLoadingAction(true))} 
         to={`/user/${user.id}`}
