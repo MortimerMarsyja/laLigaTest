@@ -7,11 +7,17 @@ box-shadow: 1px 2px 6px 0 rgb(173 170 170 / 30%);
 border-radius: 30px;
 background: ${whiteColor};
 .pagesWrapper{
+  &-core{
+    width:88px;
+    margin: 0 auto;
+  }
   line-height: 20px;
-  display: flex;
-  justify-content: space-between;
-  padding: 4px 24px;
-  width: 156px;
+  padding: 4px 9px;
+  width: 184px;
+  display:flex;
+  label{
+    margin-right:12px;
+  }
 }
 .iconButton{
   border: none;
@@ -23,6 +29,13 @@ background: ${whiteColor};
   background:none;
   color:blue;
   fill:blue;
+  &:disabled{
+    fill:#d0d0d0;
+    pointer-events:none;
+  }
+}
+.iconButton:first-child{
+  margin-right:0 -18px 0 0;
 }
 .iconButton:hover{
   cursor:pointer;
