@@ -47,12 +47,11 @@ const Home = (params) =>{
     <StyledHome>
       {isLoading? <p>Loading...</p>:
       <div>
+        <h3>Users</h3>
         <ul>
           {renderHomeContent(users,dispatch)}
         </ul>
-        <div>
         <PaginationController loaderFunction={setLoadingAction} data={users} currentPage={currentPage}/>
-        </div>
       </div>
       }
     </StyledHome>
