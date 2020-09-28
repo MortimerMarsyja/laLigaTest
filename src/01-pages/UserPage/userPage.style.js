@@ -1,34 +1,36 @@
 import styled from "styled-components";
 
-import { greyColors } from "../../07-styles/index.style";
+import {aliceBlueColor} from "../../07-styles/index.style";
 
 export const StyledUser = styled.div`
-  width: 564px;
-  background-color: #none;
+  width: 448px;
+  background-color: ${aliceBlueColor};
   display:flex;
   justify-content:space-between;
   margin: 12px auto;
   padding: 12px 9px;
-  border-radius:6px;
-  border: 1px solid ${greyColors[100]};
+  border-radius:20px;
+  margin-top:30px;
   .leftUserFeatures{
-    width=50%;
+    width:auto;
   }
   .rightUserFeatures{
+    height:24px;
     margin-top:15px;
     text-align:rignt;
   }
   .circleButton{
+    background:white;
     border-radius: 50%;
     height: 34px;
     width: 34px;
-    border: 1px solid #ccc;
+    border: none;
     fill:blue;
     margin-top:-10px;
     margin-right:10px;
     transition: 0.48s;
     svg{
-      margin:3px -2px;
+      margin:4px -2px;
     }
   &:hover{
     cursor:pointer;
@@ -36,7 +38,8 @@ export const StyledUser = styled.div`
   }
   }
   .avatar{
-    margin-left:60px;
+    border-radius:28px;
+    margin-left:152px;
     margin-top:12px;
   }
   ul{

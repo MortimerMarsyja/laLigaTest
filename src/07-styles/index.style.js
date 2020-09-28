@@ -1,5 +1,6 @@
 export const greyColors = {
   100:'#ECECEC',
+  'russian':'#DADADA',
   200:'#C6C6C6',
   300:'#A1A1A1',
   400:'#7A7A7A',
@@ -9,5 +10,6 @@ export const greyColors = {
 }
 
 export const whiteColor = '#ffffff';
+export const aliceBlueColor = '#eef8ff'
 export const blueColor = '#b8afff';
 export const pinkColor = '#ffafcd';

@@ -3,6 +3,8 @@ import {whiteColor} from '../../07-styles/index.style';
 
 export const StyledPaginationController = styled.div`
 height:30px;
+width:202px;
+margin:0 auto;
 box-shadow: 1px 2px 6px 0 rgb(173 170 170 / 30%);
 border-radius: 30px;
 background: ${whiteColor};
@@ -10,6 +12,10 @@ background: ${whiteColor};
   &-core{
     width:88px;
     margin: 0 auto;
+  }
+  input[type='number']{
+    border: 1px solid blue;
+    border-radius: 4px;
   }
   line-height: 20px;
   padding: 4px 9px;

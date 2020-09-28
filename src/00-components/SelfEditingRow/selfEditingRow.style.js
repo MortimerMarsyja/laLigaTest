@@ -6,7 +6,6 @@ export const StyledRow = styled.div`
   width:auto;
   display:flex;
   flex-wrap:nowrap;
-  margin-left:32px;
   line-height:3px;
   align-items:center;
   button{
